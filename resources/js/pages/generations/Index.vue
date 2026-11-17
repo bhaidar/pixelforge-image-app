@@ -33,7 +33,8 @@ let timer: ReturnType<typeof setInterval> | undefined;
 onMounted(() => {
     timer = setInterval(() => {
         if (hasActive.value) {
-            router.reload({ only: ['generations', 'auth'] });
+            // async: a background refresh must never cancel or be cancelled by the user's own navigation.
+            router.reload({ only: ['generations', 'auth'], async: true });
         }
     }, 3000);
 });
