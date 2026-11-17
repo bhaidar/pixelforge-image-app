@@ -4,7 +4,13 @@ Laravel 12 + Vue 3 + Inertia (official Vue starter kit). Users generate images t
 
 ## Run with Docker or Podman
 
-Setup (both runtimes): `cp .env.example .env`, set `APP_PORT=8000`, `WWWUSER` and `WWWGROUP` (e.g. `id -u` / `id -g`), and fill in the keys below.
+Setup (both runtimes), from a fresh clone:
+
+```bash
+cp .env.example .env          # then set APP_PORT=8000, WWWUSER, WWWGROUP (id -u / id -g) and the keys below
+composer install              # compose.yaml builds from vendor/laravel/sail, so vendor/ must exist first
+touch database/database.sqlite
+```
 
 **Docker**
 
